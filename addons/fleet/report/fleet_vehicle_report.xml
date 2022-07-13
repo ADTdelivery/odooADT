@@ -1,0 +1,72 @@
+<?xml version="1.0" ?>
+<odoo>
+
+    <record id="fleet.aparcamiento_report" model="ir.actions.report">
+        <field name="name">Reporte de vehiculos</field>
+        <field name="model">fleet.vehicle</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">fleet.vehicle_report_view</field>
+        <field name="report_file">fleet.vehicle_report</field>
+        <field name="binding_model_id" ref="model_fleet_vehicle"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <template id="vehicle_report_view">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="aparcamiento">
+                <div class="page">
+
+                    <style>
+                        .title_report{
+                            font-size: 36px;
+                            font-family: sans-serif;
+                            background-color: #ff0000;
+                        }
+                    </style>
+
+                    <p class="title_report">holaaaaaaaaa</p>
+                    <h1>Cronograma de pagos</h1>
+                    <div>
+                        <label for="nombre_apellidos">
+                            <span>Nombres y Apellidos : Jhon Anthony Curi Saravia</span>
+                        </label>
+                        <label for="numero_celular">
+                            <span>Numero de celular</span>
+                        </label>
+                    </div>
+                    <div>
+                        <label for="codigo_bcp">
+                            <span>1949398016052 - BCP / CORPORACION ADT</span>
+                        </label>
+                        <label for="voucher">
+                            <span>Enviar baucher : 903148875 ATENCION ADT</span>
+                        </label>
+                    </div>
+
+                    <!--<h2 t-field="aparcamiento.name"/>
+                    <p>Numero de plazas:
+                        <span t-field="aparcamiento.plazas"/>
+                    </p>
+                    <h3>Vehiculos :</h3>
+                    <ul>
+                        <t t-foreach="aparcamiento.coche_ids" t-as="coche">
+                            <li>
+                                <span t-field="coche.name"/>
+                            </li>
+                        </t>
+                    </ul>
+                    <p>
+                        Como se comentaba en el apartado anterior en relación con el perfeccionamiento del contrato, el
+                        consentimiento supone la manifestación de la voluntad de las partes, ya sea de forma expresa o
+                        de forma tácita.Como se comentaba en el apartado anterior en relación con el perfeccionamiento del contrato, el
+                        consentimiento supone la manifestación de la voluntad de las partes, ya sea de forma expresa o
+                        de forma tácita.Como se comentaba en el apartado anterior en relación con el perfeccionamiento del contrato, el
+                        consentimiento supone la manifestación de la voluntad de las partes, ya sea de forma expresa o
+                        de forma tácita.
+                    </p>-->
+
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>

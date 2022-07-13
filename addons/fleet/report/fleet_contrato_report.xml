@@ -1,0 +1,86 @@
+<?xml version="1.0" ?>
+<odoo>
+
+    <record id="fleet.aparcamiento_report" model="ir.actions.report">
+        <field name="name">Contrato</field>
+        <field name="model">fleet.vehicle</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">fleet.vehicle_contrato_report_view</field>
+        <field name="report_file">fleet.vehicle_contrato_report</field>
+        <field name="binding_model_id" ref="model_fleet_vehicle"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <template id="vehicle_contrato_report_view">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="aparcamiento">
+                <div class="page">
+
+                    <style>
+                        .title_report{
+                            font-size: 36px;
+                            font-family: sans-serif;
+                            background-color: #ff0000;
+                        }
+                    </style>
+
+                    <p class="title_report">holaaaaaaaaa</p>
+                    <h1>Cronograma de pagos</h1>
+                    <div>
+                        <label for="nombre_apellidos">
+                            <span>Nombres y Apellidos : Jhon Anthony Curi Saravia</span>
+                        </label>
+                        <label for="numero_celular">
+                            <span>Numero de celular</span>
+                        </label>
+                    </div>
+                    <div>
+                        <label for="codigo_bcp">
+                            <span>1949398016052 - BCP / CORPORACION ADT</span>
+                        </label>
+                        <label for="voucher">
+                            <span>Enviar baucher : 903148875 ATENCION ADT</span>
+                        </label>
+                    </div>
+
+
+                </div>
+            </t>
+        </t>
+    </template>
+
+
+
+    <record id="fleet.aparcamiento_report2" model="ir.actions.report">
+        <field name="name">Contrato 2 </field>
+        <field name="model">fleet.vehicle</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">fleet.vehicle_contrato2_report_view</field>
+        <field name="report_file">fleet.vehicle_contrato2_report</field>
+        <field name="binding_model_id" ref="model_fleet_vehicle"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <template id="vehicle_contrato2_report_view">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="aparcamiento">
+                <div class="page">
+
+                    <style>
+                        .title_report{
+                            font-size: 36px;
+                            font-family: sans-serif;
+                            background-color: #ff0000;
+                        }
+                    </style>
+
+                    <h1>Prueba 2</h1>
+
+
+                </div>
+            </t>
+        </t>
+    </template>
+
+
+</odoo>
